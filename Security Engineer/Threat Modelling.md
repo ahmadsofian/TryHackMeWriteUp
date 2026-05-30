@@ -29,11 +29,11 @@ Process for Attack Simulation and Threat Analysis (PASTA) is a 7-step, risk-cent
 
 ## DREAD Framework (Risk Prioritization)
 Once threats are identified, DREAD is used to qualitatively score and prioritize remediation efforts (typically on a scale of 1-3 or 1-10 per category):
-Damage: How severe would the impact be if the exploit succeeds?
-Reproducibility: How easy is it for an attacker to replicate the attack?
-Exploitability: How much effort/skill is required to execute the exploit?
-Affected Users: What percentage of our infrastructure or user base would be impacted?
-Discoverability: How easy is it for an external threat actor to find this vulnerability?
+* **Damage:** How severe would the impact be if the exploit succeeds?
+* **Reproducibility:** How easy is it for an attacker to replicate the attack?
+* **Exploitability:** How much effort/skill is required to execute the exploit?
+* **Affected Users:** What percentage of our infrastructure or user base would be impacted?
+* **Discoverability:** How easy is it for an external threat actor to find this vulnerability?
 
 ---
 
