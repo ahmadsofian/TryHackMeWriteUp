@@ -1,6 +1,7 @@
 ## 📝 Executive Summary
 This write ups cover the cores frameworks, compliance regulations and cyber audit methodology
 
+---
 
 ## 🛠️ Frameworks & Regulations Covered
 *   **Regulatory Compliance:** GDPR (General Data Protection Regulation), PCI DSS (Payment Card Industry Data Security Standard)
@@ -9,7 +10,7 @@ This write ups cover the cores frameworks, compliance regulations and cyber audi
 
 ---
 
-# 🔍 Key Learning Domains
+## 🔍 Key Learning Domains
 ### 1. Regulatory Frameworks: GDPR & PCI DSS
 Understand the legal and industrial baselines for protecting sensitive data:
 *   **GDPR:** Focused on protecting the personal data and privacy of EU citizens. It mandates strict data handling processing principles, data minimization, and grants individuals the "Right to be Forgotten."
