@@ -51,15 +51,16 @@ This approach assigns tangible, monetary values to risk components, enabling pre
 * **Asset Value (AV):** The total financial worth of the asset being protected.
 * **Exposure Factor (EF):**  The percentage of loss that an asset would suffer if a specific threat occurs (expressed as a percentage, e.g., 50% or 0.50).
 * **Single Loss Expectancy (SLE):**  The monetary loss expected from a single risk event.
-SLE = Asset Value (AV) x Exposure Factor (EF)
 
 * **Annualized Rate of Occurrence (ARO):**  How many times a year the threat is expected to happen (e.g., once every two years = 0.5; three times a year = 3).
 * **Annualized Loss Expectancy (ALE):**  The total estimated financial loss from a specific risk over the course of one year.
-ALE = Single Loss Expectancy (SLE) x Annualized Rate of Occurrence (ARO)
+* **Value of a Safeguard**  To justify buying a security control (safeguard) to senior management, the financial value it brings must outweigh its cost. 
 
-Value of a Safeguard To justify buying a security control (safeguard) to senior management, the financial value it brings must outweigh its cost. 
-We calculate this using the following formula:
-Value = ALE_before - ALE_after - Annual_Cost_of_Safeguard
+| Formula Name | Equation | Component Key |
+| :--- | :--- | :--- |
+| **Single Loss Expectancy** | `SLE = AV × EF` | **AV:** Asset Value <br>**EF:** Exposure Factor (%) |
+| **Annualized Loss Expectancy** | `ALE = SLE × ARO` | **SLE:** Single Loss Expectancy <br>**ARO:** Annualized Rate of Occurrence |
+| **Value of a Safeguard** | `Value = ALE(before) - ALE(after) - Cost` | **Cost:** Annual Cost of the Safeguard |
 
 💡 GRC Decision Rule: If the resulting value is positive, the safeguard is financially justified. If the value is negative, the control costs more than the risk itself, meaning the organization should consider accepting or transferring the risk instead.
 
