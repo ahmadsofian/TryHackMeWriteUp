@@ -1,6 +1,6 @@
 ### Task 1: Introduction
 In this room i learned to identify common social engineering tactics used in phishing, anakyze red flags, detect link manipulation & tracking pixels and deconstruct credential harvesting and attachment manipulation.
-
+---
 ### Task 2: Cancel Your Order
 In this, i examined sample email designed to mimic official transaction from PayPal.
 
