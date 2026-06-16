@@ -5,7 +5,7 @@ In this room, i learnt the common methods used for data exfiltration, how to det
 ### Task 2: Lab Connection
 
 ### Task 3: Data Exfil: Overview, Technique and indicators
-**Techniques and Indicators**
+**Techniques and Indicators**\
 Detecting exfiltration requires correlating host and network-level indicators such as unusually large or frequent outbound uploads (proxy/firewall), long or high-entropy DNS queries, suspicious process command-lines and network connections (Sysmon/EDR), cloud storage API activity, removable-media events, and effective SOC L1 triage focuses on source host/user, destination, transferred volume, process identity/command-line, and supporting evidence across proxy, DNS, flow, host, and cloud logs.
 <img width="1240" height="635" alt="image" src="https://github.com/user-attachments/assets/87bfa7c7-99fe-49e6-b9e5-63c7fbe8b94c" />
 
