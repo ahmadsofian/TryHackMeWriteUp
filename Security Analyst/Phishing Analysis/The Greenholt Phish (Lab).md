@@ -20,8 +20,7 @@ The goal is to analyze the provided email sample and determine whether it is leg
 
 **Q6: Who is the owner of the originating IP?**
 1. Perform IP lookup or WHOIS to find the organization correspond to the IP address.
-<img width="873" height="773" alt="image" src="https://github.com/user-attachments/assets/3d778489-f1c0-4d09-8cd8-0380ce709566" />
-\
+<img width="873" height="773" alt="image" src="https://github.com/user-attachments/assets/3d778489-f1c0-4d09-8cd8-0380ce709566" />\
 **Q7: What is the full SPF record for this domain?**
 1. Use mxtoolbox and copied the email header and pasted in for analysis.
 2. Able to get the SPF information in easy-to-read format.
@@ -38,7 +37,6 @@ The goal is to analyze the provided email sample and determine whether it is leg
 
 **Q11: What is the attachment's file size in KB (e.g., 122.31 KB)?**
 1. Copied the hash value and look it up at VirusTotal and found the size.
-<img width="927" height="505" alt="image" src="https://github.com/user-attachments/assets/a91b6dc4-5f73-47ca-a98b-d0458b5cfc49" />
-\
+<img width="927" height="505" alt="image" src="https://github.com/user-attachments/assets/a91b6dc4-5f73-47ca-a98b-d0458b5cfc49" />\
 **Q12: What is the actual file type of the attachment?**
 1. File type is also in the above question  details section.
