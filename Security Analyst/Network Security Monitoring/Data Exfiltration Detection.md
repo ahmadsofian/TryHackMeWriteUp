@@ -14,7 +14,7 @@ Detecting exfiltration requires correlating host and network-level indicators su
 DNS exfiltration abuses the DNS, a protocal normally allowed through networks to smuggle bytes encoded inside DNS queries/responses so firewalls and web proxies don't notic.
 DNS typically allowed and often unfiltered or forwarded to public resolvers.
 
-**DNS Tunneling**
+**DNS Tunneling**\
 DNS (Domain Name System) translates human-friendly domain names (e.g., example.com) into IP addresses and provides other record types (A, AAAA, TXT, MX, CNAME, etc.). 
 Key points:
 * DNS queries are ubiquitous: almost every host performs DNS lookups.
@@ -26,7 +26,7 @@ Why attackers use DNS for exfiltration:
 * High cover: queries look like normal requests unless inspected closely.
 * Flexible payload: data can be encoded into the subdomain labels or TXT responses.
 
-**Indicators of attack**
+**Indicators of attack**\
 When analysing DNS traffic for possible indicators of data exfiltration, we should look for:
 * Many DNS queries are sent to a single external domain, especially with very high counts compared to the baseline.
 * Long subdomain labels or unusually long full query names (> 60–100 characters).
@@ -35,7 +35,7 @@ When analysing DNS traffic for possible indicators of data exfiltration, we shou
 * Unusual response behavior: frequent NXDOMAIN (if attacker uses exfil-by-query without answering), or TCP/large UDP fragments for DNS.
 * Queries at regular intervals (beaconing behaviour).
 
-**Detecting through wireshark**
+**Detecting through wireshark**\
 Let's start by applying filter on dns traffic, using the following filter, as shown below:
 * Filter: *dns*
 Let's filter on the DNS queries with no response using the following filter:
@@ -45,7 +45,7 @@ Find log queries (suspicious subdomain lenghts)
 Let's filter on the suspicious domain using the following filter:
 * Filter: *dns && dns.qry.name contains "the domain name"*
 
-**Investigating with Splunk**
+**Investigating with Splunk**\
 Search Query: *index=data_exfil sourcetype=DNS_logs*
 This search query will filter show the results matching sourcetype=DNS_logs. What to look for
 
@@ -54,7 +54,7 @@ Let's run the following search query to display the stats of DNS queries generat
 Let's now apply filter on the stats of the queries to identify the suspicious ones, as shown below:
 * Search Query: *index="data_exfil" sourcetype="dns_logs" | stats count by query | sort -count*
 
-**Long Query Names (subdomain encoding)**
+**Long Query Names (subdomain encoding)**\
 Let's now apply the following filter on the queries with length over 30 and see if we can filter the odd-looking ones out, as shown below:
 * Search Query: *index="data_exfil" sourcetype="DNS_logs" | where len(query) > 30*
 With the resulted indicators, we were able to identify the data exfiltration attempts through DNS tunneling:
@@ -69,14 +69,14 @@ FTP (File Transfer Protocol) is one of the oldest protocols for transferring fil
 * Use compromised credentials (service accounts, user creds).
 * Use non-standard ports or tunneling to blend with other traffic.
 
-**Indicators of attack**
+**Indicators of attack**\
 What to look for:
 * USER and PASS commands (cleartext credentials).
 * STOR (upload) and RETR (download) commands: repeated or large transfers.
 * Large data connections to unusual external IPs, especially outside business hours.
 * Data channel openings on ephemeral ports (PASV) paired with large payloads.
 
-**Examining the FTP exfil file**
+**Examining the FTP exfil file**\
 Isolate FTP control & data
 * First, we will look for FTP Sessions using the *ftp || ftp-data filter*
 Look for credentials
@@ -89,11 +89,11 @@ We can look at suspicious files by filtering on the file extensions like PDF, cs
 * Filter: *ftp contains "csv"*
 The results show a suspicious IP connected as Guest account has transferred some sensitive csv files to a supicious external IP.
 
-**Identifying the traffic with large payload size**
+**Identifying the traffic with large payload size**\
 Look at the traffic with a large length.
 * Filter *ftp && frame.len > 90* and check out the content in TCP Stream
 
-**Question**
+**Question**\
 Q1: How many connections were observed from the guest account?
 1. Filter: *_ws.col.info == "Request: USER guest"*
 
@@ -130,7 +130,7 @@ Data exfiltration via HTTP is when an attacker moves sensitive data out of a tar
 * Frequent small requests (beaconing) to the same host, followed by large uploads.
 * Chunked or multipart transfers where multiple requests compose a larger file.
 
-**Analyze Logs in Splunk**
+**Analyze Logs in Splunk**\
 To start, use the following search query to get the http_logs and make sure to select Time range as All Time, as shown below:
 * Search Query: *index="data_exfil" sourcetype="http_logs"*
 As we understand, the exfiltration attempts can be done via POST requests. We will apply a filter on the POST method to further narrow down our results, as shown below:
@@ -141,7 +141,7 @@ Let's filter out benign traffic and isolate POSTs with large payloads.
 * Search Query: index="data_exfil" sourcetype="http_logs" method=POST bytes_sent > 600 | table _time src_ip uri domain dst_ip bytes_sent | sort - bytes_sent
 Our analysis so far points to one suspicious entry, with a large chunk of data uploaded to an external source. Let's correlate this with the pcap to extend our analysis further.
 
-**Analyze in Wireshark**
+**Analyze in Wireshark**\
 Apply a filter on the HTTP traffic, as shown below:
 * Filter: *http*
 We can see HTTP traffic with both GET and POST requests. Filter on POST requests, as shown below:
