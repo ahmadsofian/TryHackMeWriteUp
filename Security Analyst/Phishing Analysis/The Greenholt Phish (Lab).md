@@ -21,6 +21,7 @@ The goal is to analyze the provided email sample and determine whether it is leg
 **Q6: Who is the owner of the originating IP?**
 1. Perform IP lookup or WHOIS to find the organization correspond to the IP address.
 <img width="873" height="773" alt="image" src="https://github.com/user-attachments/assets/3d778489-f1c0-4d09-8cd8-0380ce709566" />\
+
 **Q7: What is the full SPF record for this domain?**
 1. Use mxtoolbox and copied the email header and pasted in for analysis.
 2. Able to get the SPF information in easy-to-read format.
