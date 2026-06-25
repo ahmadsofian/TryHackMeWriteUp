@@ -74,10 +74,12 @@ In the screenshot below, you can see a timechart created in Splunk based on all 
 
 1. **Normal User Requests** - A few requests to various pages every minute
 2. **DoS Attack** - 1,000 requests to /login.php within a one-minute timeframe
-3. **Requested Pages**
+3. **Requested Pages** 
+
 <img width="520" height="174" alt="image" src="https://github.com/user-attachments/assets/3532858c-9450-47ec-8428-33b731ebbe29" /> \
 
-Looking over the same requests but filtering by the user agent (useragent) and IP address (clientip) fields enables you to see more details about where the requests originated.
+Looking over the same requests but filtering by the user agent (useragent) and IP address (clientip) fields enables you to see more details about where the requests originated. 
+
 <img width="520" height="232" alt="image" src="https://github.com/user-attachments/assets/ec65f186-f7b4-42bd-9add-2f7a3d0d557d" /> \
 
 
