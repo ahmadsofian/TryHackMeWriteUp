@@ -10,7 +10,7 @@
 * Imagine a simple website that allows you to upload your pet photos. The website is intended for storing images. However, if developed insecurely, an attacker may upload a web shell like shell.php or mydog.aspx and gain command execution on the server.
 
 
-## Anatomy of a Web Shell
+## Task 3: Anatomy of a Web Shell
 Web shells rely on the abuse of legitimate functions within programs.
 System execution functions in PHP, such as shell_exec(), exec(), system(), and passthru(), can be abused to gain command execution. \
 Here is a simple web shell written in PHP. Let's take a look at its functionality.
@@ -88,7 +88,7 @@ Some benefits of Security Information and Event Management (SIEM) platforms incl
 * Allows analysts to search and analyze logs more efficiently.
 
 
-## Beyond Logs
+## Task 5: Beyond Logs
 ### File System Analysis
 An attacker's web shell must be stored somewhere. Analyzing web server files is crucial in identifying uploaded web shells or locating files modified to include a web shell payload.
 It should be noted that some platforms like WordPress and Django store page content in a database rather than a file system, so malicious code may be injected into posts, themes, or settings and won't appear in normal file system searches.
