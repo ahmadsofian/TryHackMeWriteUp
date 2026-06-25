@@ -85,22 +85,27 @@ Looking over the same requests but filtering by the user agent (useragent) and I
 
 ### Hands On (Lab)
 **Q1: What was the most frequently requested uri?**
+
 <img width="582" height="248" alt="image" src="https://github.com/user-attachments/assets/25cafd3d-0b30-4236-aa27-33a76e81dac1" /> \
 
 **Q2: Which clientip made the most requests to the target uri?**
+
 <img width="389" height="139" alt="image" src="https://github.com/user-attachments/assets/d52c7d6b-9e89-43bd-bea0-46a57634134a" /> \
 
 <img width="767" height="126" alt="image" src="https://github.com/user-attachments/assets/5878e2d4-7e90-4d6b-b5aa-aa4746072b04" /> \
 
 **Q3: How many IP addresses were part of the botnet that attacked your website?**
+
 <img width="551" height="269" alt="image" src="https://github.com/user-attachments/assets/d858008f-2e8d-4d3b-8470-754dd30cc3c6" /> \
 
 **Q4: Which useragent was most commonly used by the attacking traffic?**
+
 <img width="768" height="279" alt="image" src="https://github.com/user-attachments/assets/eb94e73c-b681-41b2-8e6a-bfa8795088f8" /> \
 
 
 **Q5: Use the timechart command to visualize the requests.
 What is the peak number of requests made per second during the attack?**
+
 <img width="767" height="276" alt="image" src="https://github.com/user-attachments/assets/bf5dd9f0-0fc6-447b-9458-d1a157c369fa" /> \
 
 
