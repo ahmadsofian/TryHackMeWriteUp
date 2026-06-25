@@ -1,4 +1,4 @@
-<img width="520" height="232" alt="image" src="https://github.com/user-attachments/assets/6b3188ee-fe1e-40b2-b9ec-89a9642db562" />## Task 2: DoS and DDoS Attacks
+## Task 2: DoS and DDoS Attacks
 Denial-of-Service (DoS) attacks are meant to overwhelm a website or app so that people can’t use it. When this happens, customers can’t log in, shop, or access services, and businesses lose money and trust.
 
 ### DoS
