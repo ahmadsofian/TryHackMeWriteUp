@@ -1,24 +1,24 @@
 ### Task 2: Nmap Scans
 **Q1: What is the total number of the "TCP Connect" scans?**
 1. Use the given "~/Desktop/exercise-pcaps/nmap/Exercise.pcapng"
-2. Use the query: *tcp.flags.syn==1 and tcp.flags.ack ==0 and tcp.window_size > 1024*\
+2. Use the query: *tcp.flags.syn==1 and tcp.flags.ack ==0 and tcp.window_size > 1024*
 
 **Q2: Which scan type is used to scan the TCP port 80?**
 1. Relies on the three-way handshake (needs to finish the handshake process).
 2. Usually conducted with nmap -sT command.
 3. Used by non-privileged users (only option for a non-root user).
-4. Usually has a windows size larger than 1024 bytes as the request expects some data due to the nature of the protocol.\
+4. Usually has a windows size larger than 1024 bytes as the request expects some data due to the nature of the protocol.
 
 **Q3: How many "UDP close port" messages are there?**
-1. Use filter: *icmp.type==3 and icmp.code==3* \
+1. Use filter: *icmp.type==3 and icmp.code==3* 
    
 **Q4: Which UDP port in the 55-70 port range is open?**
 1. Filter: *udp.dstport in {55..70}*
 2. Analyze the wireshark notice that only one port that are not currently in use.
 
-
+\
 ### Task 3: ARP Poisoning and MiTM
-Use the “Desktop/exercise-pcaps/arp/Exercise.pcapng” file.\
+Use the “Desktop/exercise-pcaps/arp/Exercise.pcapng” file.
 **Q1: What is the number of ARP requests crafted by the attacker?**
 1. Identify who the attacker was.
 2. Filter: *arp.duplicate-address-detected or arp.duplicate-address-frame*
@@ -29,7 +29,7 @@ Use the “Desktop/exercise-pcaps/arp/Exercise.pcapng” file.\
 **Q2: What is the number of HTTP packets received by the attacker?**
 1. We will modify the query to filter all http packets received by the attacker.
 2. Filter: *http and eth.addr == 00:0c:29:e2:18:b4*
-3. If we use the IP address of the attacker, no packets will be displayed. However, if we use the spoofed address, we will see some packets.\
+3. If we use the IP address of the attacker, no packets will be displayed. However, if we use the spoofed address, we will see some packets.
 
 **Q3: What is the number of sniffed username&password entries?**
 1. We first need to identify the login points or URL for authentication.
@@ -38,7 +38,7 @@ Use the “Desktop/exercise-pcaps/arp/Exercise.pcapng” file.\
 4. We will modify the query to filter only “POST” request. We get ten packets.
 5. Go through all the packets, and some will contain credentials in the Packet details under the HTML Form URL endoded section.
 6. I realized soon after I answered the last two questions below that we can modify the filter used to matched any value in that field, excluding empty strings.
-7. Filter: *urlencoded-form matches ".+"*\
+7. Filter: *urlencoded-form matches ".+"*
 
 **Q4: What is the password of the "Client986"?**
 1. From the previous packet, we know that data was captured in the HTML Form URL Encoded section. The Display Filter Expression will help us create a filter that is acceptable to wireshark.
@@ -48,7 +48,7 @@ Use the “Desktop/exercise-pcaps/arp/Exercise.pcapng” file.\
 1. Same concept as the previous question. Any comments in the hostname might have been captured.
 2. Filter: *urlencode-form matches "client354"*\
 
-
+\
 ### Task 4: Identifying Hosts: DHCP, NetBIOS and Kerberos
 Use the “Desktop/exercise-pcaps/dhcp-netbios-kerberos/dhcp-netbios.pcap” file.\
 
@@ -73,6 +73,7 @@ What is the IP address of the user “u5”? (Enter the address in defanged form
 1. Filter: *kerberos.CNameString contains "$"*
 2. Values that end with “$” are hostnames, and the ones without it are usernames.\
 
+\
 ### Task 5: Tunneling Traffic: DNS and ICMP
 Use the “Desktop/exercise-pcaps/dns-icmp/icmp-tunnel.pcap” file.
 Investigate the anomalous packets.\
@@ -94,7 +95,7 @@ Investigate the anomalous packets.
 5. We can also use the following query or modify it if we are looking for a specific top-level domain such as “.com”
 6. Filter: *dns.qry.name.len > 40 and !mdns && dns.qry.name contains ".com"*\
 
-
+\
 ### Task 6: Cleartext Protocol Analysis: FTP
 Use the “Desktop/exercise-pcaps/ftp/ftp.pcap” file.
 **Q1: How many incorrect login attempts are there?**
@@ -113,6 +114,8 @@ Use the “Desktop/exercise-pcaps/ftp/ftp.pcap” file.
 1. Filter: *ftp contains "CHMOD"*
 2. “CHMOD” is a terminal command used for modifying file permissions using numeric or symbolic representation.\
 
+
+\
 ### Task 7: Cleartext Protocol Analysis: HTTP
 Use the “Desktop/exercise-pcaps/http/user-agent.cap” file.
 **Q1: Investigate the user agents. What is the number of anomalous “user-agent” types?**
@@ -140,6 +143,7 @@ Locate the “Log4j” attack starting phase. What is the packet number?**
 1. This question can be solved with above solution.\
 
 
+\
 ### Task 8: Encrypted Protocol Analysis: Decrypting HTTPS
 Use the “Desktop/exercise-pcaps/https/Exercise.pcap” file.
 
@@ -158,6 +162,8 @@ Use the “Desktop/exercise-pcaps/https/Exercise.pcap” file.
 1. In the export HTTP object list window, there are two files, and one of which is kind of suspicious. So let’s go to the packet number and see what it is.
 2. The flag can be seen in the Line-based text data section of the packet details pane. \
 
+
+\
 ### Task 9 Bonus: Hunt Cleartext Credentials
 Use the “Desktop/exercise-pcaps/bonus/Bonus-exercise.pcap” file.
 **Q1: What is the packet number of the credentials using “HTTP Basic Auth”?**
@@ -170,7 +176,7 @@ Use the “Desktop/exercise-pcaps/bonus/Bonus-exercise.pcap” file.
 4. Another way to look for empty credentials submission for FTP packets is to select one of the packets where authentication is being requested. Select the “Request command: PASS” from the packet details, then left-click it and drag all the way to the display filter, or simply by right-clicking and applying it as a display filter.
 5. The result will display all ftp packets that requested for a “PASS” command in the authentication.\
 
-
+\
 ### Task 10: Bonus: Actionable Results
 Use the “Desktop/exercise-pcaps/bonus/Bonus-exercise.pcap” file.
 **Q1:Select packet number 99. Create a rule for “IPFirewall (ipfw)”. What is the rule for “denying source IPv4 address”?**
