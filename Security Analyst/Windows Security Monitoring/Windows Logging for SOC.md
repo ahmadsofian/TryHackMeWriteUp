@@ -49,16 +49,20 @@ A typical Windows server can generate tens of login events per minute, and every
 **Q1: Open the "Practice-Security.evtx" file on the VM's Desktop.
 Which IP performed a brute force of the THM-PC?**
 Filter Event ID 4625 which indicate Logon Failure, give us clue that it is typical brue force.
+
 <img width="489" height="475" alt="image" src="https://github.com/user-attachments/assets/0a7b0e7f-574b-4666-8d62-abeb8cc892ac" />
 
 **Q2: Which user has been breached as a result of the attack?**
+
 <img width="595" height="442" alt="image" src="https://github.com/user-attachments/assets/34f22401-4e5b-43cc-aa04-866560c429cd" />
 
 **Q3: What was the Logon ID of the malicious RDP login? Note: The login you are looking for has a Logon Type 10.**
+
 <img width="387" height="287" alt="image" src="https://github.com/user-attachments/assets/f532ab80-69fb-4a5f-ab73-97b9dbec8c80" />
 
 
 ## Task 4: Security Log: User Management
+
 <img width="866" height="472" alt="image" src="https://github.com/user-attachments/assets/78b9429e-a99e-448f-8efb-750bfd35dc5d" />
 
 ### Structure of User Management Events
@@ -86,10 +90,12 @@ All user management events have a similar structure and can be split into three 
 
 **Q1: Continue with the "Practice-Security.evtx" file on the VM's Desktop.
 Which user was created by the attacker soon after the RDP login?**
+
 <img width="535" height="300" alt="image" src="https://github.com/user-attachments/assets/58a669fe-54fe-41d7-a680-f0c361a7c9c5" />
 
 **Q2: Which two privileged groups was the backdoor user added to?
 (Answer in alphabetical order, e.g. "Administrators, Power Users")**
+
 <img width="493" height="306" alt="image" src="https://github.com/user-attachments/assets/fea279fe-db1d-4ab6-8d7d-bc0b1261e55e" /> <img width="530" height="314" alt="image" src="https://github.com/user-attachments/assets/48d82a65-c07b-48a0-a39d-04319c313309" />
 
 
