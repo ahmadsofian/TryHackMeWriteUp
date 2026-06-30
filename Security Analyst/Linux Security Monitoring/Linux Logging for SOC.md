@@ -125,7 +125,7 @@ You might have noticed an inconvenient output of auditd - although it provides a
 * **Osquery:** An interesting tool that can be broadly used for various security purposes
 * **EDRs:** Most EDR solutions can track and monitor various Linux runtime events
 
-## Lab
+### Lab
 **Q1: When was the secret.thm file opened for the first time? (MM/DD/YY HH:MM:SS)
 Note: Access to this file is logged with the "file_thmsecret" key.**
 * Search the audit logs (human-readable output via ausearch -i), or directly inspect /var/log/audit/audit.log for the file_thmsecret key:
